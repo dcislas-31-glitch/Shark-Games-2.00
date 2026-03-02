@@ -12,6 +12,7 @@
     }
   </style>
 </head>
+<h1>Shark Games 2.0</h1>
 
 <script>
 alert("DO NOT SHARE SITE. Use space on right side of screen to scroll down in order to play other games. If game says it is blocked then reload until it works. Have Fun!")
@@ -20,7 +21,6 @@ alert("DO NOT SHARE SITE. Use space on right side of screen to scroll down in or
 
 <body>
 
-<h1>Shark Games 2.0<h1>
 
 
 <iframe 

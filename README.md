@@ -62,11 +62,11 @@ button: hover {
     <button onclick="openGame('minecraftFrame')">Minecraft</button>
     <button onclick="openGame('infiniteFrame')">Infinite Craft</button>
     <button onclick="openGame('soundboardFrame')">Soundboard</button>
-  <button onclick="opengame('territorialFrame')"Territorial</button>
+    <button onclick="opengame('territorialFrame')">Territorial</button>
   </div>
 <iframe id="playFrame" src="https://www.playtropolis.com" allowfullscreen></iframe>
 <iframe id="minecraftFrame" src="https://eaglercraftx.org/" allowfullscreen></iframe>
-<embed id="infiniteFrame" src="https://infinite-craft.org/infinite-craft/" width="100%" height="100%" style="display:none;" allowfullscreen>
+<iframe id="infiniteFrame" src="https://infinite-craft.org/infinite-craft/" width="100%" height="100%" style="display:none;" allowfullscreen>
 <iframe id="soundboardFrame" src="https://www.myinstants.com/en/index/us/" allowfullscreen></iframe>
 <iframe id="territorialFrame" src="https://territorial.io/" allowfullscreen></iframe>
 

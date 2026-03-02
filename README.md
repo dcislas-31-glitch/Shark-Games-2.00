@@ -7,7 +7,7 @@
 <script>
 alert("Do Not Share")
 </script>
-
+<style>
 body {
   min-height:200vh;
   background: linear-gradient(rgba(10,10,25,0.85), rgba(5,5,15,0.95)),
@@ -17,3 +17,4 @@ url('https://static.wixstatic.com/media/5ed219_8a6b736413a74792b04a8f14d267da20~
   overflow-x:hidden;
   scroll-behavior:smooth;
 }
+</style>

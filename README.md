@@ -64,6 +64,7 @@ button: hover {
     <button onclick="openGame('soundboardFrame')">Soundboard</button>
     <button onclick="opengame('territorialFrame')">Territorial</button>
   </div>
+</div>
 <iframe id="playFrame" src="https://www.playtropolis.com" allowfullscreen></iframe>
 <iframe id="minecraftFrame" src="https://eaglercraftx.org/" allowfullscreen></iframe>
 <iframe id="infiniteFrame" src="https://infinite-craft.org/infinite-craft/" width="100%" height="100%" style="display:none;" allowfullscreen>

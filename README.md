@@ -69,6 +69,43 @@ button: hover {
 <iframe id="infiniteFrame" src="https://infinite-craft.org/infinite-craft/" width="100%" height="100%" style="display:none;" allowfullscreen>
 <iframe id="soundboardFrame" src="https://www.myinstants.com/en/index/us/" allowfullscreen></iframe>
 <iframe id="territorialFrame" src="https://territorial.io/" allowfullscreen></iframe>
+<script>
+const home=document.getElementById("homeScreen");
+const homeBtn=document.getElementById("homeBtn");
+const loader=document.getElementById("loader");
+const more=document.getElementById("moreContent");
+
+function hideAll(){
+  document.querySelectorAll("iframe, embed").forEach(el => el.style.display="none");
+}
+
+function openGame(id){
+  loader.classList.add("active");
+
+  setTimeout(()=>{
+    home.style.display="none";
+    hideAll();
+    document.getElementById(id).style.display="block";
+    homeBtn.style.display="block";
+    loader.classList.remove("active");
+  },600);
+}
+
+function goHome(){
+  hideAll();
+  home.style.display="flex";
+  homeBtn.style.display="none";
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+/* Scroll reveal */
+window.addEventListener('scroll',()=>{
+  const trigger=window.scrollY + window.innerHeight - 100;
+  if(trigger>more.offsetTop){
+    more.classList.add('visible');
+  }
+});
+</script>
 
  
 </body>

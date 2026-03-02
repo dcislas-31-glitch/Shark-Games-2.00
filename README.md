@@ -97,6 +97,7 @@ iframe {
 <iframe id="territorialFrame" src="https://territorial.io/" allowfullscreen></iframe>
 
 <script>
+alert("Do Not Share Site")
 function hideAll(){
   document.querySelectorAll("iframe").forEach(el => el.style.display="none");
 }

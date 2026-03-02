@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <title>Shark Games</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<h1>CREDITS TO https://onclu.github.io/easywaystolearn/</h1>
+<h1>CREDITS TO onclu.github.io/easywaystolearn</h1>
 <script>
 alert("Do Not Share")
 </script>
@@ -74,15 +74,12 @@ const home=document.getElementById("homeScreen");
 const homeBtn=document.getElementById("homeBtn");
 const loader=document.getElementById("loader");
 const more=document.getElementById("moreContent");
-
 function hideAll(){
   document.querySelectorAll("iframe, embed").forEach(el => el.style.display="none");
 }
-
 function openGame(id){
   loader.classList.add("active");
-
-  setTimeout(()=>{
+setTimeout(()=>{
     home.style.display="none";
     hideAll();
     document.getElementById(id).style.display="block";
@@ -90,14 +87,12 @@ function openGame(id){
     loader.classList.remove("active");
   },600);
 }
-
 function goHome(){
   hideAll();
   home.style.display="flex";
   homeBtn.style.display="none";
   window.scrollTo({top:0, behavior:'smooth'});
 }
-
 /* Scroll reveal */
 window.addEventListener('scroll',()=>{
   const trigger=window.scrollY + window.innerHeight - 100;

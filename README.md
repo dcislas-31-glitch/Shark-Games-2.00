@@ -1,16 +1,21 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Shark Games</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<script>
+alert("Do Not Share");
+</script>
+
 <style>
 body {
   margin:0;
   font-family: Arial, sans-serif;
-  min-height:100vh;
   background: linear-gradient(rgba(10,10,25,0.85), rgba(5,5,15,0.95)),
-  url('https://static.wixstatic.com/media/5ed219_8a6b736413a74792b04a8f14d267da20~mv2.jpg/v1/fill/w_800,h_555,al_c,q_85/5ed219_8a6b736413a74792b04a8f14d267da20~mv2.jpg') no-repeat center center fixed;
+  url('https://static.wixstatic.com/media/5ed219_8a6b736413a74792b04a8f14d267da20~mv2.jpg') 
+  no-repeat center center fixed;
   background-size:cover;
   color:white;
   overflow-x:hidden;
@@ -82,7 +87,7 @@ iframe {
 
 <body>
 
-<h1>CREDITS TO onclu.github.io/easywaystolearn</h1>
+<h1>Shark Games</h1>
 
 <button id="homeBtn" onclick="goHome()">Home</button>
 
@@ -91,33 +96,44 @@ iframe {
   <button onclick="openGame('minecraftFrame')">Minecraft</button>
   <button onclick="openGame('infiniteFrame')">Infinite Craft</button>
   <button onclick="openGame('soundboardFrame')">Soundboard</button>
-  <button onclick="openGame('territorialFrame')">Territorial</button>
+
+  <!-- Territorial opens directly -->
+  <button onclick="window.location.href='https://territorial.io/'">
+    Territorial
+  </button>
 </div>
 
 <iframe id="playFrame" src="https://www.playtropolis.com" allowfullscreen></iframe>
 <iframe id="minecraftFrame" src="https://eaglercraftx.org/" allowfullscreen></iframe>
 <iframe id="infiniteFrame" src="https://infinite-craft.org/infinite-craft/" allowfullscreen></iframe>
 <iframe id="soundboardFrame" src="https://www.myinstants.com/en/index/us/" allowfullscreen></iframe>
-<iframe id="territorialFrame" src="https://territorial.io/" allowfullscreen></iframe>
 
 <script>
-alert("Do Not Share Site")
 function hideAll(){
   document.querySelectorAll("iframe").forEach(el => el.style.display="none");
 }
 
 function openGame(id){
   hideAll();
+
+  document.querySelector("h1").style.display="none";
   document.querySelector(".buttonContainer").style.display="none";
+
   document.getElementById(id).style.display="block";
   document.getElementById("homeBtn").style.display="block";
-  window.scrollTo(0,0);
+
+  document.body.style.overflow="hidden";
 }
 
 function goHome(){
   hideAll();
+
+  document.querySelector("h1").style.display="block";
   document.querySelector(".buttonContainer").style.display="flex";
+
   document.getElementById("homeBtn").style.display="none";
+
+  document.body.style.overflow="auto";
 }
 </script>
 

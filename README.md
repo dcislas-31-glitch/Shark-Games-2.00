@@ -14,6 +14,24 @@
 </head>
 <h1>Shark Games 2.0</h1>
 
+
+button {
+  padding:18px;
+  font-size:18px;
+  background: rgba(12, 60, 18, 0.07);
+  color:white;
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:6px; /* square look */
+  cursor:pointer;
+  transition:0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+  <div class="buttonContainer">
+    <button onclick="openGame('playFrame')">PLaytropolis</button>
+
+  </div>
+  
 <script>
 alert("DO NOT SHARE SITE. Use space on right side of screen to scroll down in order to play other games. If game says it is blocked then reload until it works. Have Fun!")
 </script>
@@ -21,7 +39,9 @@ alert("DO NOT SHARE SITE. Use space on right side of screen to scroll down in or
 
 <body>
 
+<iframe id="playFrame" src="https://playtropolis.com/" allowfullscreen></iframe>
 
+<script>
 
 <iframe 
   src="https://www.playtropolis.com"

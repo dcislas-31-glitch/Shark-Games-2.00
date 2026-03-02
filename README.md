@@ -68,10 +68,14 @@ button:hover {
 
 iframe {
   display:none;
-  width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
   height:100vh;
   border:none;
-  position:full;
+  z-index:5;
+  background:black;
 }
 </style>
 </head>

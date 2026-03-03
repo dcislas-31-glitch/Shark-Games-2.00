@@ -9,48 +9,53 @@ alert("Do Not Share");
 </script>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
-  margin:0;
   font-family: Arial, sans-serif;
   background: linear-gradient(rgba(10,10,25,0.85), rgba(5,5,15,0.95)),
   url('https://static.wixstatic.com/media/5ed219_8a6b736413a74792b04a8f14d267da20~mv2.jpg') 
   no-repeat center center fixed;
-  background-size:cover;
-  color:white;
+  background-size: cover;
+  color: white;
+
+  display: flex;
+  justify-content: center;  /* horizontal */
+  align-items: center;      /* vertical */
 }
 
-/* Centers everything vertically + horizontally */
 .mainContent {
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;  /* vertical center */
-  align-items:center;      /* horizontal center */
-  text-align:center;
+  text-align: center;
 }
 
 h1 {
-  font-size:42px;
-  margin-bottom:30px;
+  font-size: 42px;
+  margin-bottom: 30px;
 }
 
 .buttonContainer {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 button {
-  padding:18px 28px;
-  font-size:18px;
+  padding: 18px 28px;
+  font-size: 18px;
   background: rgba(12, 60, 18, 0.07);
-  color:white;
-  border:1px solid rgba(255,255,255,0.2);
-  border-radius:8px;
-  cursor:pointer;
-  transition:0.3s ease;
-  backdrop-filter: blur(6px);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 button:hover {
@@ -59,35 +64,25 @@ button:hover {
 }
 
 #homeBtn {
-  position:fixed;
-  top:15px;
-  left:15px;
-  padding:8px 14px;
-  font-size:14px;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(0,0,0,0.2);
-  border-radius:4px;
-  color:#ccc;
-  cursor:pointer;
-  display:none;
-  z-index:20;
-}
-
-#homeBtn:hover {
-  background:rgba(255,255,255,0.2);
-  color:white;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  padding: 8px 14px;
+  font-size: 14px;
+  display: none;
+  z-index: 20;
 }
 
 iframe {
-  display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100vw;
-  height:100vh;
-  border:none;
-  z-index:5;
-  background:black;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  z-index: 5;
+  background: black;
 }
 </style>
 </head>
@@ -103,7 +98,6 @@ iframe {
     <button onclick="openGame('infiniteFrame')">Infinite Craft</button>
     <button onclick="openGame('soundboardFrame')">Soundboard</button>
 
-    <!-- Territorial opens in new tab (site blocks iframe embedding) -->
     <button onclick="window.open('https://territorial.io/', '_blank')">
       Territorial
     </button>
@@ -112,7 +106,6 @@ iframe {
 
 <button id="homeBtn" onclick="goHome()">Home</button>
 
-<!-- Game Iframes -->
 <iframe id="playFrame" src="https://www.playtropolis.com" allowfullscreen></iframe>
 <iframe id="minecraftFrame" src="https://eaglercraftx.org/" allowfullscreen></iframe>
 <iframe id="infiniteFrame" src="https://infinite-craft.org/infinite-craft/" allowfullscreen></iframe>
@@ -132,15 +125,19 @@ function openGame(id){
   document.getElementById(id).style.display = "block";
   document.getElementById("homeBtn").style.display = "block";
 
+  document.body.style.display = "block";
   document.body.style.overflow = "hidden";
 }
 
 function goHome(){
   hideAll();
 
-  document.querySelector(".mainContent").style.display = "flex";
+  document.querySelector(".mainContent").style.display = "block";
   document.getElementById("homeBtn").style.display = "none";
 
+  document.body.style.display = "flex";
+  document.body.style.justifyContent = "center";
+  document.body.style.alignItems = "center";
   document.body.style.overflow = "auto";
 }
 </script>

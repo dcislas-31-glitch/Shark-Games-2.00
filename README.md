@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -22,31 +23,32 @@ body {
 
 h1 {
   text-align:center;
-  margin-top:20px;
+  margin-top:30px;
+  font-size:40px;
 }
 
 .buttonContainer {
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:15px;
-  margin-top:40px;
+  gap:20px;
+  margin-top:60px;
 }
 
 button {
-  padding:18px;
+  padding:18px 28px;
   font-size:18px;
   background: rgba(12, 60, 18, 0.07);
   color:white;
   border:1px solid rgba(255,255,255,0.2);
-  border-radius:6px;
+  border-radius:8px;
   cursor:pointer;
   transition:0.3s ease;
   backdrop-filter: blur(6px);
 }
 
 button:hover {
-  background: rgba(30, 0, 255, 0.15);
+  background: rgba(30, 0, 255, 0.2);
   transform: translateY(-4px);
 }
 
@@ -88,7 +90,6 @@ iframe {
 
 <h1>Shark Games</h1>
 
-
 <button id="homeBtn" onclick="goHome()">Home</button>
 
 <div class="buttonContainer">
@@ -97,18 +98,13 @@ iframe {
   <button onclick="openGame('infiniteFrame')">Infinite Craft</button>
   <button onclick="openGame('soundboardFrame')">Soundboard</button>
 
-  <button onclick="window.location.href='https://territorial.io/'">
+  <!-- Territorial opens in new tab because it blocks iframes -->
+  <button onclick="window.open('https://territorial.io/', '_blank')">
     Territorial
   </button>
 </div>
-<style>
-.center {
-  display: flex;
-  justify-content: center;
-  gap: 10px; /* space between buttons */
-}
-</style>
 
+<!-- Iframes -->
 <iframe id="playFrame" src="https://www.playtropolis.com" allowfullscreen></iframe>
 <iframe id="minecraftFrame" src="https://eaglercraftx.org/" allowfullscreen></iframe>
 <iframe id="infiniteFrame" src="https://infinite-craft.org/infinite-craft/" allowfullscreen></iframe>
@@ -116,30 +112,32 @@ iframe {
 
 <script>
 function hideAll(){
-  document.querySelectorAll("iframe").forEach(el => el.style.display="none");
+  document.querySelectorAll("iframe").forEach(frame => {
+    frame.style.display = "none";
+  });
 }
 
 function openGame(id){
   hideAll();
 
-  document.querySelector("h1").style.display="none";
-  document.querySelector(".buttonContainer").style.display="none";
+  document.querySelector("h1").style.display = "none";
+  document.querySelector(".buttonContainer").style.display = "none";
 
-  document.getElementById(id).style.display="block";
-  document.getElementById("homeBtn").style.display="block";
+  document.getElementById(id).style.display = "block";
+  document.getElementById("homeBtn").style.display = "block";
 
-  document.body.style.overflow="hidden";
+  document.body.style.overflow = "hidden";
 }
 
 function goHome(){
   hideAll();
 
-  document.querySelector("h1").style.display="block";
-  document.querySelector(".buttonContainer").style.display="flex";
+  document.querySelector("h1").style.display = "block";
+  document.querySelector(".buttonContainer").style.display = "flex";
 
-  document.getElementById("homeBtn").style.display="none";
+  document.getElementById("homeBtn").style.display = "none";
 
-  document.body.style.overflow="auto";
+  document.body.style.overflow = "auto";
 }
 </script>
 

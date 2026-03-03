@@ -88,6 +88,7 @@ iframe {
 
 <h1>Shark Games</h1>
 
+
 <button id="homeBtn" onclick="goHome()">Home</button>
 
 <div class="buttonContainer">
@@ -96,11 +97,17 @@ iframe {
   <button onclick="openGame('infiniteFrame')">Infinite Craft</button>
   <button onclick="openGame('soundboardFrame')">Soundboard</button>
 
-  <!-- Territorial opens directly -->
   <button onclick="window.location.href='https://territorial.io/'">
     Territorial
   </button>
 </div>
+<style>
+.center {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* space between buttons */
+}
+</style>
 
 <iframe id="playFrame" src="https://www.playtropolis.com" allowfullscreen></iframe>
 <iframe id="minecraftFrame" src="https://eaglercraftx.org/" allowfullscreen></iframe>

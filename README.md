@@ -98,7 +98,6 @@ iframe {
     <button onclick="openGame('infiniteFrame')">Infinite Craft</button>
     <button onclick="openGame('soundboardFrame')">Soundboard</button>
     <button onclick="opengame('territorialFrame')">Territorial</button>
-    <button onclick="opengame('rockFrame')">What Beats Rock</button>
   </div>
 </div>
 
@@ -109,7 +108,6 @@ iframe {
 <iframe id="infiniteFrame" src="https://infinite-craft.org/infinite-craft/" allowfullscreen></iframe>
 <iframe id="soundboardFrame" src="https://www.myinstants.com/en/index/us/" allowfullscreen></iframe>
 <iframe id="territorialFrame" src="https://territorial.io/" allowfullscreen></iframe>
-<iframe id="rockFrame" src="https://whatbeatsrock.com/" allowfullscreen></iframe>
 
 
 <script>

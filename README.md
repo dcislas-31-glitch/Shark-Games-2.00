@@ -18,23 +18,25 @@ body {
   no-repeat center center fixed;
   background-size:cover;
   color:white;
-  overflow-x:hidden;
+}
+
+/* Centers everything vertically + horizontally */
+.mainContent {
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;  /* vertical center */
+  align-items:center;      /* horizontal center */
+  text-align:center;
 }
 
 h1 {
-  text-align:center;
-  margin-top:40px;
-  font-size:40px;
-}
-
-/* THIS is what actually centers the buttons */
-.buttonWrapper {
-  text-align:center;
-  margin-top:60px;
+  font-size:42px;
+  margin-bottom:30px;
 }
 
 .buttonContainer {
-  display:inline-flex;   /* key change */
+  display:flex;
   flex-wrap:wrap;
   justify-content:center;
   gap:20px;
@@ -93,25 +95,25 @@ iframe {
 
 <body>
 
-<h1>Shark Games</h1>
+<div class="mainContent">
+  <h1>Shark Games</h1>
 
-<button id="homeBtn" onclick="goHome()">Home</button>
-
-<div class="buttonWrapper">
   <div class="buttonContainer">
     <button onclick="openGame('playFrame')">Playtropolis</button>
     <button onclick="openGame('minecraftFrame')">Minecraft</button>
     <button onclick="openGame('infiniteFrame')">Infinite Craft</button>
     <button onclick="openGame('soundboardFrame')">Soundboard</button>
 
-    <!-- Opens in new tab (site blocks iframe) -->
+    <!-- Territorial opens in new tab (site blocks iframe embedding) -->
     <button onclick="window.open('https://territorial.io/', '_blank')">
       Territorial
     </button>
   </div>
 </div>
 
-<!-- Iframes -->
+<button id="homeBtn" onclick="goHome()">Home</button>
+
+<!-- Game Iframes -->
 <iframe id="playFrame" src="https://www.playtropolis.com" allowfullscreen></iframe>
 <iframe id="minecraftFrame" src="https://eaglercraftx.org/" allowfullscreen></iframe>
 <iframe id="infiniteFrame" src="https://infinite-craft.org/infinite-craft/" allowfullscreen></iframe>
@@ -127,9 +129,7 @@ function hideAll(){
 function openGame(id){
   hideAll();
 
-  document.querySelector("h1").style.display = "none";
-  document.querySelector(".buttonWrapper").style.display = "none";
-
+  document.querySelector(".mainContent").style.display = "none";
   document.getElementById(id).style.display = "block";
   document.getElementById("homeBtn").style.display = "block";
 
@@ -139,9 +139,7 @@ function openGame(id){
 function goHome(){
   hideAll();
 
-  document.querySelector("h1").style.display = "block";
-  document.querySelector(".buttonWrapper").style.display = "block";
-
+  document.querySelector(".mainContent").style.display = "flex";
   document.getElementById("homeBtn").style.display = "none";
 
   document.body.style.overflow = "auto";

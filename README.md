@@ -18,13 +18,20 @@ body {
   no-repeat center center fixed;
   background-size:cover;
   color:white;
-  overflow-x:hidden;
+  overflow:hidden;
+
+  /* THIS centers everything */
+  display:flex;
+  flex-direction:column;
+  justify-content:center;   /* vertical center */
+  align-items:center;       /* horizontal center */
+  height:100vh;
 }
 
 h1 {
-  text-align:center;
-  margin-top:30px;
+  margin-bottom:40px;
   font-size:40px;
+  text-align:center;
 }
 
 .buttonContainer {
@@ -32,7 +39,7 @@ h1 {
   flex-wrap:wrap;
   justify-content:center;
   gap:20px;
-  margin-top:60px;
+  max-width:800px;
 }
 
 button {
@@ -98,7 +105,7 @@ iframe {
   <button onclick="openGame('infiniteFrame')">Infinite Craft</button>
   <button onclick="openGame('soundboardFrame')">Soundboard</button>
 
-  <!-- Territorial opens in new tab because it blocks iframes -->
+  <!-- Opens in new tab because it blocks iframes -->
   <button onclick="window.open('https://territorial.io/', '_blank')">
     Territorial
   </button>
@@ -126,6 +133,7 @@ function openGame(id){
   document.getElementById(id).style.display = "block";
   document.getElementById("homeBtn").style.display = "block";
 
+  document.body.style.display = "block";
   document.body.style.overflow = "hidden";
 }
 
@@ -137,7 +145,12 @@ function goHome(){
 
   document.getElementById("homeBtn").style.display = "none";
 
-  document.body.style.overflow = "auto";
+  document.body.style.display = "flex";
+  document.body.style.flexDirection = "column";
+  document.body.style.justifyContent = "center";
+  document.body.style.alignItems = "center";
+  document.body.style.height = "100vh";
+  document.body.style.overflow = "hidden";
 }
 </script>
 

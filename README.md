@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -17,28 +18,26 @@ body {
   no-repeat center center fixed;
   background-size:cover;
   color:white;
-  overflow:hidden;
-
-  /* THIS centers everything */
-  display:flex;
-  flex-direction:column;
-  justify-content:center;   /* vertical center */
-  align-items:center;       /* horizontal center */
-  height:100vh;
+  overflow-x:hidden;
 }
 
 h1 {
-  margin-bottom:40px;
-  font-size:40px;
   text-align:center;
+  margin-top:40px;
+  font-size:40px;
+}
+
+/* THIS is what actually centers the buttons */
+.buttonWrapper {
+  text-align:center;
+  margin-top:60px;
 }
 
 .buttonContainer {
-  display:flex;
+  display:inline-flex;   /* key change */
   flex-wrap:wrap;
   justify-content:center;
   gap:20px;
-  max-width:800px;
 }
 
 button {
@@ -98,16 +97,18 @@ iframe {
 
 <button id="homeBtn" onclick="goHome()">Home</button>
 
-<div class="buttonContainer">
-  <button onclick="openGame('playFrame')">Playtropolis</button>
-  <button onclick="openGame('minecraftFrame')">Minecraft</button>
-  <button onclick="openGame('infiniteFrame')">Infinite Craft</button>
-  <button onclick="openGame('soundboardFrame')">Soundboard</button>
+<div class="buttonWrapper">
+  <div class="buttonContainer">
+    <button onclick="openGame('playFrame')">Playtropolis</button>
+    <button onclick="openGame('minecraftFrame')">Minecraft</button>
+    <button onclick="openGame('infiniteFrame')">Infinite Craft</button>
+    <button onclick="openGame('soundboardFrame')">Soundboard</button>
 
-  <!-- Opens in new tab because it blocks iframes -->
-  <button onclick="window.open('https://territorial.io/', '_blank')">
-    Territorial
-  </button>
+    <!-- Opens in new tab (site blocks iframe) -->
+    <button onclick="window.open('https://territorial.io/', '_blank')">
+      Territorial
+    </button>
+  </div>
 </div>
 
 <!-- Iframes -->
@@ -127,12 +128,11 @@ function openGame(id){
   hideAll();
 
   document.querySelector("h1").style.display = "none";
-  document.querySelector(".buttonContainer").style.display = "none";
+  document.querySelector(".buttonWrapper").style.display = "none";
 
   document.getElementById(id).style.display = "block";
   document.getElementById("homeBtn").style.display = "block";
 
-  document.body.style.display = "block";
   document.body.style.overflow = "hidden";
 }
 
@@ -140,16 +140,11 @@ function goHome(){
   hideAll();
 
   document.querySelector("h1").style.display = "block";
-  document.querySelector(".buttonContainer").style.display = "flex";
+  document.querySelector(".buttonWrapper").style.display = "block";
 
   document.getElementById("homeBtn").style.display = "none";
 
-  document.body.style.display = "flex";
-  document.body.style.flexDirection = "column";
-  document.body.style.justifyContent = "center";
-  document.body.style.alignItems = "center";
-  document.body.style.height = "100vh";
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow = "auto";
 }
 </script>
 

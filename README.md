@@ -97,7 +97,6 @@ iframe {
     <button onclick="openGame('minecraftFrame')">Minecraft</button>
     <button onclick="openGame('infiniteFrame')">Infinite Craft</button>
     <button onclick="openGame('soundboardFrame')">Soundboard</button>
-
     <button onclick="opengame('territorialFrame')">Territorial</button>
   </div>
 </div>

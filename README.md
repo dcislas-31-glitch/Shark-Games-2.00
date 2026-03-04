@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <title>Shark Games</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<h1>CREDIT TO deltmathcom.github.io/deltmath.com</h1>
 <script>
 alert("Do Not Share");
 </script>
@@ -104,7 +104,7 @@ iframe {
 <button id="homeBtn" onclick="goHome()">Home</button>
 
 <iframe id="playFrame" src="https://www.playtropolis.com" allowfullscreen></iframe>
-<iframe id="minecraftFrame" src="https://eaglercraftx.org/" allowfullscreen></iframe>
+<iframe id="minecraftFrame" src="https://eaglercraft.com/" allowfullscreen></iframe>
 <iframe id="infiniteFrame" src="https://infinite-craft.org/infinite-craft/" allowfullscreen></iframe>
 <iframe id="soundboardFrame" src="https://www.myinstants.com/en/index/us/" allowfullscreen></iframe>
 <iframe id="territorialFrame" src="https://territorial.io/" allowfullscreen></iframe>

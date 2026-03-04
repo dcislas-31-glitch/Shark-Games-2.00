@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <title>Shark Games</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<h1>CREDIT TO deltmathcom.github.io/deltmath.com</h1>
+<h1>CREDIT TO deltamathcom.github.io/deltamath.com</h1>
 <script>
 alert("Do Not Share");
 </script>
